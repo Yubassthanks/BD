@@ -1,0 +1,32 @@
+Quantas tabelas o banco de dados Pizzaria possui?
+R:5
+
+SHOW Tables;
+
+Quantos clientes foram cadastrados?
+R:105
+
+SELECT COUNT(*) FROM clientes;
+
+Quantas pizzas foram cadastradas?
+R: 41
+
+SELECT COUNT(*) FROM Pizzas;
+
+
+Quantas pizzas o pedido número 3 possui?
+R:21
+
+SELECT SUM(quantidade) AS total_quantidade 
+FROM Itens_Pedido 
+WHERE pedido_id = quantidade;
+
+
+Qual cliente fez o pedido número 3?
+
+R:Adriano da Silva Ferreira
+
+SELECT c.nome AS nome_cliente 
+FROM Clientes c 
+JOIN Pedidos p ON c.cliente_id = p.cliente_id 
+WHERE p.pedido_id = 3;
